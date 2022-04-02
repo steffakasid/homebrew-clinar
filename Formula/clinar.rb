@@ -5,21 +5,21 @@
 class Clinar < Formula
   desc "This tool can cleanup stale gitlab runners."
   homepage "https://github.com/steffakasid/clinar"
-  version "0.4"
+  version "0.5"
   license "Apache-2.0"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/steffakasid/clinar/releases/download/v0.4/clinar_0.4_Darwin_arm64.tar.gz"
-      sha256 "cd18cf9c3220b862678ba3cd51326a0850b20734ca200eb8f1ae869081e3cdab"
+    if Hardware::CPU.intel?
+      url "https://github.com/steffakasid/clinar/releases/download/v0.5/clinar_0.5_Darwin_x86_64.tar.gz"
+      sha256 "906a3e04d68b2dda9f9ccdfda597da6eca6654b6d7f78c28cd9f5fbbe3ca5acb"
 
       def install
         bin.install "clinar"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/steffakasid/clinar/releases/download/v0.4/clinar_0.4_Darwin_x86_64.tar.gz"
-      sha256 "cc73b3c4b2d6612c2c4ab45bbbfb874cddb545f5093fa0475685d79c807df224"
+    if Hardware::CPU.arm?
+      url "https://github.com/steffakasid/clinar/releases/download/v0.5/clinar_0.5_Darwin_arm64.tar.gz"
+      sha256 "c6d1b74782e862d843cffa49a0c170d502a5c98a0bcf9ecc4ac452b645d59557"
 
       def install
         bin.install "clinar"
@@ -29,16 +29,16 @@ class Clinar < Formula
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/steffakasid/clinar/releases/download/v0.4/clinar_0.4_Linux_x86_64.tar.gz"
-      sha256 "924743f3e788c36f4746fdc47f2ffeea6af109f15d9f43adb4c27c7c16ce24af"
+      url "https://github.com/steffakasid/clinar/releases/download/v0.5/clinar_0.5_Linux_x86_64.tar.gz"
+      sha256 "ab6930ad03f9582a02676e7d1d4a329da4c6efad2737aa09a738317d92c745c9"
 
       def install
         bin.install "clinar"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/steffakasid/clinar/releases/download/v0.4/clinar_0.4_Linux_arm64.tar.gz"
-      sha256 "40706bcef100b919ae39a604e94bea942dd8c8d499a9bd67dc306d89d32c3481"
+      url "https://github.com/steffakasid/clinar/releases/download/v0.5/clinar_0.5_Linux_arm64.tar.gz"
+      sha256 "dbf77c7f40fdadec7c184feb379d67a8b4ccf8079be67d8c26df0fb324ab0317"
 
       def install
         bin.install "clinar"
