@@ -5,21 +5,21 @@
 class Clinar < Formula
   desc "This tool can cleanup stale gitlab runners."
   homepage "https://github.com/steffakasid/clinar"
-  version "0.5"
+  version "0.6"
   license "Apache-2.0"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/steffakasid/clinar/releases/download/v0.5/clinar_0.5_Darwin_x86_64.tar.gz"
-      sha256 "906a3e04d68b2dda9f9ccdfda597da6eca6654b6d7f78c28cd9f5fbbe3ca5acb"
+    if Hardware::CPU.arm?
+      url "https://github.com/steffakasid/clinar/releases/download/v0.6/clinar_0.6_Darwin_arm64.tar.gz"
+      sha256 "e37330dd5e81cf85a01ef6ae23bc1166681e22c94670e254c9fe27febe3f877e"
 
       def install
         bin.install "clinar"
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/steffakasid/clinar/releases/download/v0.5/clinar_0.5_Darwin_arm64.tar.gz"
-      sha256 "c6d1b74782e862d843cffa49a0c170d502a5c98a0bcf9ecc4ac452b645d59557"
+    if Hardware::CPU.intel?
+      url "https://github.com/steffakasid/clinar/releases/download/v0.6/clinar_0.6_Darwin_x86_64.tar.gz"
+      sha256 "83ba3203c9d8afad01cd68f2a2b944e5cd4cbb15d6c58ae36c495f87260d1fe7"
 
       def install
         bin.install "clinar"
@@ -28,17 +28,17 @@ class Clinar < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/steffakasid/clinar/releases/download/v0.5/clinar_0.5_Linux_x86_64.tar.gz"
-      sha256 "ab6930ad03f9582a02676e7d1d4a329da4c6efad2737aa09a738317d92c745c9"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/steffakasid/clinar/releases/download/v0.6/clinar_0.6_Linux_arm64.tar.gz"
+      sha256 "0cfa42fd410dfe385387c69a0d9c64dbd3936b3fed0bd0135b97f60c7ab3acc9"
 
       def install
         bin.install "clinar"
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/steffakasid/clinar/releases/download/v0.5/clinar_0.5_Linux_arm64.tar.gz"
-      sha256 "dbf77c7f40fdadec7c184feb379d67a8b4ccf8079be67d8c26df0fb324ab0317"
+    if Hardware::CPU.intel?
+      url "https://github.com/steffakasid/clinar/releases/download/v0.6/clinar_0.6_Linux_x86_64.tar.gz"
+      sha256 "b79b5cc9d7cf10ac3e2a86771438288f831f93fe77ecda57f9a21068a6d0a6c7"
 
       def install
         bin.install "clinar"
