@@ -5,21 +5,21 @@
 class Clinar < Formula
   desc "This tool can cleanup stale gitlab runners."
   homepage "https://github.com/steffakasid/clinar"
-  version "0.13"
+  version "0.14"
   license "Apache-2.0"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/steffakasid/clinar/releases/download/0.13/clinar_0.13_Darwin_arm64.tar.gz"
-      sha256 "021c8c1582896f49393618696ba93abeeac2cdf1ac42dd8d9b6870ff87e94c11"
+      url "https://github.com/steffakasid/clinar/releases/download/v0.14/clinar_0.14_Darwin_arm64.tar.gz"
+      sha256 "99d64be973a9ec88b359a5cb6c7e2653d37f4fd11c8281b739cf283111b8a9b0"
 
       def install
         bin.install "clinar"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/steffakasid/clinar/releases/download/0.13/clinar_0.13_Darwin_x86_64.tar.gz"
-      sha256 "3818929b72c42240cf12ca44ee50651a13b6fe22e7f8de4bba318777bad6c25b"
+      url "https://github.com/steffakasid/clinar/releases/download/v0.14/clinar_0.14_Darwin_x86_64.tar.gz"
+      sha256 "bcca313b789aceb758538b31b70a30f5a79351a655fbf783d013597618f77d38"
 
       def install
         bin.install "clinar"
@@ -28,17 +28,17 @@ class Clinar < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/steffakasid/clinar/releases/download/0.13/clinar_0.13_Linux_x86_64.tar.gz"
-      sha256 "2f9c50f6085ab48fced4bc44c5f7b0ec9ac65b9a8e61f6eb8a1bbeed94e3f749"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/steffakasid/clinar/releases/download/v0.14/clinar_0.14_Linux_arm64.tar.gz"
+      sha256 "ebcf419f03ea984038792c34c621becb45976a20d1c3cdf227091efe0e359ea7"
 
       def install
         bin.install "clinar"
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/steffakasid/clinar/releases/download/0.13/clinar_0.13_Linux_arm64.tar.gz"
-      sha256 "ca5c192df4ab897a35205e661d43809b7dc7e82e19281e0010e0f257509eb06f"
+    if Hardware::CPU.intel?
+      url "https://github.com/steffakasid/clinar/releases/download/v0.14/clinar_0.14_Linux_x86_64.tar.gz"
+      sha256 "8cda8d477fdaa659d2c2bcd1ad1fa50adfa8572b80587223c57e2df6d57619f6"
 
       def install
         bin.install "clinar"
