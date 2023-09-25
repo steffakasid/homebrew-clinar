@@ -5,21 +5,21 @@
 class Clinar < Formula
   desc "This tool can cleanup stale gitlab runners."
   homepage "https://github.com/steffakasid/clinar"
-  version "0.17"
+  version "0.18"
   license "Apache-2.0"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/steffakasid/clinar/releases/download/v0.17/clinar_0.17_darwin_amd64.tar.gz"
-      sha256 "a998c057a3299de7a5468a06312a716af74c82ae296d6970456c00241a9f7503"
+      url "https://github.com/steffakasid/clinar/releases/download/v0.18/clinar_0.18_darwin_amd64.tar.gz"
+      sha256 "e857624f689d777c3b98e3f49bbdf23adbba0f032b08ce2da4d820601d5c45d5"
 
       def install
         bin.install "clinar"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/steffakasid/clinar/releases/download/v0.17/clinar_0.17_darwin_arm64.tar.gz"
-      sha256 "497f0df7d9200c56fe83c8051c8f38109d5f97f41a799974a11bdd71a411dccc"
+      url "https://github.com/steffakasid/clinar/releases/download/v0.18/clinar_0.18_darwin_arm64.tar.gz"
+      sha256 "7a34c69b7e55c788fe56c53b82d5ce271b9cd76249c507e90e93d4ff455d67bf"
 
       def install
         bin.install "clinar"
@@ -29,16 +29,16 @@ class Clinar < Formula
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/steffakasid/clinar/releases/download/v0.17/clinar_0.17_linux_amd64.tar.gz"
-      sha256 "365f4e651b2ea369a179b1f9477a053f0ef2bf437561e9574579631c59cd517c"
+      url "https://github.com/steffakasid/clinar/releases/download/v0.18/clinar_0.18_linux_amd64.tar.gz"
+      sha256 "5dbc9e8af2454a20d43f50cdf8dd1df26869586e3833b30e2daaed5179d25d04"
 
       def install
         bin.install "clinar"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/steffakasid/clinar/releases/download/v0.17/clinar_0.17_linux_arm64.tar.gz"
-      sha256 "5c6f0973b5f15acc1d9edb7ee16442d22a0154b7301454d912175e2dcbce5776"
+      url "https://github.com/steffakasid/clinar/releases/download/v0.18/clinar_0.18_linux_arm64.tar.gz"
+      sha256 "e928ae7294c2f0076960da5bd081e1fb57250a0ff211db6ae2b3a2a8b9578719"
 
       def install
         bin.install "clinar"
